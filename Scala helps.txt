@@ -1,0 +1,130 @@
+:paste
+
+val hello = "Hello"
+s"$hello, its me"
+s"${hello*2}, its me"
+
+//None is a Value
+//Nothing is a Type
+
+for(a => list) yield {}
+for(i <- 0 to list.size -1)
+for(i <- 0 until list.size)
+for(a <- List if a == "string")
+
+for (i <- 0 until 7
+     j <- list)
+  {
+     print(s"$i,$j"
+  }
+
+valuetomatch match{case "Pattern" => "Returned Value"
+	   case "Pattern2"|"Pattern3" => "Returned value2"
+	   case someotherpattern if someotherpattern == "Pattern4" => "Returned value3"  
+	   case someotherpattern => "Returned value4"
+}
+
+//also
+case _ => {}
+
+//function Syntax
+val functionName = (a:Type) => {Function Body}:ReturnType
+
+//Method Syntax
+def methodName (a:Type):ReturnType = {Method Body}
+
+val convertedMethodtofunction: (Type) => Type = methodName
+val convertedMethodtofunction = methodName _
+
+def f1(a:type) = {
+	def f2(a:type) = some_expression1
+	def f3(a:type) = some expression2
+
+	(f2(a),f3(a))
+}
+//Returns a tuple (some_expression1,some_expression2)
+
+val partialFunction = f2(_:Type,_:Type,f3)
+
+val curriedFunction = f2(f1)(_:Type,_:Type)
+
+//Regular Function Pararmeters
+def sayHelloTo(name:String)
+
+//By-name Function Parameters
+def sayHelloTo(name: => String)
+
+//Tuples
+val tuple4 = ("String","String2",Int1,"String3")
+val tuple2 = "String1" -> "String2"
+
+//Read Tuple Values
+Tuple.productIterator.foreach{i => println("Value = " + i)}
+val (string,string2,Int1,String3) = TupleName
+TupleName._i
+
+def printTupleName(a:Type,b:Type) = println(s"A:$a B:$b")
+(printTupleName _).Tupled(Tuple)
+
+//count tuple elements
+Tuple.productArity
+
+//Lists
+val listName = "String1"::"String2"::Int1::Nil
+val listName = List("String1","String2",Int1)
+val listName3 = listName1:::listName2
+val listName3 = listName1 ++ listName2
+val listname3 = List(listName1,listName2).flatten
+//List of Tuples
+listName1 zip listName2
+
+listName.Head
+listName.Tail
+listName.size
+listName.reverse
+listName(0)
+listName.contains("searchItem")
+
+listName forall (_ != "monday")
+listName1 endsWith listName2
+listName1 startsWith listName2
+
+//Maps
+val mapName = Map("String1a" -> "String1b","String2a" -> "String2b",("String3a","String3b"))
+//To avoid exceptions need to ensure keys that are called exist
+mapName.contains("String1a")
+mapName.foreach((p:(String,String) => println(p._1 + "=" + p._2))
+//convert lists to maps
+val mapName = (listName1 zip listName2).toMap
+//convert maps to lists
+val listName1 = mapName.keySet.toList
+val listName2 = mapName.values.toList
+
+//Options -returns either None or a Some(value)
+Option(Numerator/Denominator)
+
+Expression1 getOrElse Expression2
+
+function1(a,b) match {case Some(Expersion1(a,b)) case None(Expression2(a,b))}
+
+val mapName = util.Try(MapName("Not a Key"))
+MapName match {case util.Success(code) => code case util.Failure(error) => "A string"}
+
+//Arrays
+val ArrayName = Array("String1","String2")
+
+//higher order methods
+listName.foreach(println(_))
+listName.map(_ == "Mon")
+listName.filter(BooleanList)
+listName.partition(BooleanList)
+listName.sortBy(_(0))
+
+listName.scanRight(initial value)(_-_)
+listName.scanLeft(initial value)(_-_)
+
+listName.foldLeft(initial value)(_-_)
+listName.foldRight(initial value)(_-_)
+
+listName.reduceRight(_-_)
+listName.reduceLeft(_-_)
