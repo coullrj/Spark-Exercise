@@ -1,0 +1,8 @@
+#Cygwin
+cd /cygdrive/C/Users/Administrator/Desktop/Cloudrashare
+git clone https://GitHub.com/aalkilani/spark-kafka-cassandra-applying-lambda-architecture.git
+cd spark-kafka-cassandra-applying-lambda-architecture/
+cd vagrant/
+vagrant up
+vagrant ssh
+docker ps
